@@ -1,0 +1,30 @@
+---
+import Section from './Section.astro';
+import Steps from './Steps.astro';
+---
+
+<Section>
+  <h2 class="max-w-3xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
+    What a prospect experiences.
+  </h2>
+  <Steps
+    steps={[
+      {
+        title: 'A few questions first.',
+        body: 'It learns what they need, answers their questions along the way, and never interrogates.',
+      },
+      {
+        title: 'A written estimate by email.',
+        body: 'What they asked for, a ballpark range, and the next step. I confirm every quote personally.',
+      },
+      {
+        title: 'A follow-up by email.',
+        body: '"Did you get that quote? What are you thinking?" Around day 3, then day 7, then it stops.',
+      },
+      {
+        title: 'A human takes over.',
+        body: 'The moment they reply, automation goes silent. The assistant never negotiates.',
+      },
+    ]}
+  />
+</Section>

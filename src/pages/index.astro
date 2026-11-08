@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import Audit from '../components/Audit.astro';
+import Build from '../components/Build.astro';
+import Flow from '../components/Flow.astro';
+import Program from '../components/Program.astro';
+import Story from '../components/Story.astro';
+import FinalCta from '../components/FinalCta.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../config/site';
+---
+
+<Layout
+  title={`${site.name}: ${site.headline}`}
+  description="The next generation of websites. Answers your customers around the clock, gives estimates, and reports the results every month. Websites & AI Front Desk, Hudson Valley, New York."
+>
+  <Header />
+  <main>
+    <Hero />
+    <Problem />
+    <Audit />
+    <Build />
+    <Flow />
+    <Program />
+    <Story />
+    <FinalCta />
+  </main>
+  <Footer />
+</Layout>

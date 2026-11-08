@@ -1,0 +1,21 @@
+---
+import { site, navItems } from '../config/site';
+---
+
+<header class="sticky top-0 z-10 bg-pine/90 text-cream backdrop-blur">
+  <div class="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 px-5">
+    <a href="/" class="font-bold tracking-[0.14em]">
+      {site.name.toUpperCase()}
+      <span class="block text-xs font-normal tracking-normal opacity-70 max-sm:hidden">
+        {site.descriptor}
+      </span>
+    </a>
+    <nav class="flex gap-5 text-sm max-md:hidden" aria-label="Main">
+      {navItems.map((item) => (
+        <a href={item.href} class="opacity-85 hover:opacity-100">
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>

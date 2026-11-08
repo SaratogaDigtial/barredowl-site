@@ -1,0 +1,33 @@
+---
+import Section from './Section.astro';
+import Steps from './Steps.astro';
+import { site } from '../config/site';
+---
+
+<Section id="audit">
+  <h2 class="max-w-3xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
+    Start with the free Answer Audit.
+  </h2>
+  <p class="mt-4 max-w-2xl text-lg text-muted">
+    We ask your website, your Google listing, and ChatGPT the ten questions your customers ask. We
+    grade every answer and send you the report in writing.
+  </p>
+  <Steps
+    steps={[
+      {
+        title: 'We ask.',
+        body: 'Your website, Google listing, and ChatGPT get the same ten customer questions.',
+      },
+      { title: 'We grade.', body: 'Each answer is marked correct, vague, or wrong.' },
+      {
+        title: 'You get it in writing.',
+        body: 'Two pages: the scorecard, the three worst findings, and one next step.',
+      },
+    ]}
+  />
+  <p class="mt-8">
+    <a class="btn btn-amber" href={`mailto:${site.contactEmail}?subject=Free%20Answer%20Audit`}>
+      Request my free audit
+    </a>
+  </p>
+</Section>

@@ -1,0 +1,20 @@
+---
+import Section from './Section.astro';
+import { pricing } from '../config/site';
+const buildFrom = `$${pricing.buildFrom.toLocaleString('en-US')}`;
+const setupFee = `$${pricing.setupFee}`;
+---
+
+<Section id="build">
+  <h2 class="max-w-3xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
+    The Build: your business, in its own words.
+  </h2>
+  <p class="mt-4 max-w-2xl text-lg text-muted">
+    One recorded conversation with the owner, 30 to 45 minutes. From it I build the business's
+    Brain: its prices, its judgment calls, and its answers. Then it goes live on your website.
+  </p>
+  <p class="mt-6 max-w-2xl">
+    <strong>Websites:</strong> new builds and rebuilds are quoted per project, from {buildFrom}. The{' '}
+    {setupFee} Front Desk setup is waived when a website project is included.
+  </p>
+</Section>

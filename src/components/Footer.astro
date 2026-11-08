@@ -1,0 +1,15 @@
+---
+import { site } from '../config/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="py-10 text-sm text-muted">
+  <div class="mx-auto max-w-6xl space-y-1.5 px-5">
+    <p>
+      {site.name} is a trade name of {site.legalName}. Troy, New York.
+    </p>
+    <p>
+      © {year} {site.name}. {site.disclosure}
+    </p>
+  </div>
+</footer>

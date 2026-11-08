@@ -1,0 +1,34 @@
+---
+import { site } from '../config/site';
+import ChatPanel from './ChatPanel.astro';
+import MorningBrief from './MorningBrief.astro';
+---
+
+<section class="bg-pine bg-[radial-gradient(900px_400px_at_85%_-10%,rgb(217_164_65/0.16),transparent_60%)] pt-16 pb-20 text-cream sm:pt-20">
+  <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 lg:grid-cols-[1.05fr_1fr]">
+    <div>
+      <p class="mb-4 text-sm font-semibold tracking-[0.12em] text-amber uppercase">
+        The next generation of websites
+      </p>
+      <h1 class="mb-5 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+        {site.headline}
+      </h1>
+      <p class="mb-7 max-w-xl text-lg leading-relaxed opacity-90">
+        It answers customers around the clock, consults like you would, gives instant estimates, and
+        captures every lead. You get the numbers every month.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#audit" class="btn btn-amber">
+          Get my free Answer Audit
+        </a>
+        <a href="#build" class="btn btn-outline">
+          How it works
+        </a>
+      </div>
+    </div>
+    <div class="space-y-4">
+      <ChatPanel />
+      <MorningBrief />
+    </div>
+  </div>
+</section>

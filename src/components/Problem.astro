@@ -1,0 +1,39 @@
+---
+import Section from './Section.astro';
+const cards = [
+  {
+    time: '9:40 PM',
+    title: 'Nobody answers',
+    body: 'A homeowner has a leak. Your site has no answer, so they call someone else.',
+  },
+  {
+    time: 'Next morning',
+    title: 'Nobody follows up',
+    body: 'A quote goes out and is never chased. By the next morning it is gone.',
+  },
+  {
+    time: 'Every month',
+    title: 'Nobody knows',
+    body: "You can't say how many people visited, what they asked, or what it produced.",
+  },
+];
+---
+
+<Section>
+  <h2 class="max-w-3xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
+    Your customers shop after hours. Your website clocks out at five.
+  </h2>
+  <p class="mt-4 max-w-2xl text-lg text-muted">
+    The people who need you research at night and on weekends. When nobody answers, they call the
+    next name on the list.
+  </p>
+  <div class="mt-10 grid gap-4 md:grid-cols-3">
+    {cards.map((c) => (
+      <article class="rounded-2xl border border-rule bg-paper p-6">
+        <p class="mb-3 text-sm font-semibold text-muted">{c.time}</p>
+        <h3 class="mb-2 text-lg font-semibold">{c.title}</h3>
+        <p class="text-muted">{c.body}</p>
+      </article>
+    ))}
+  </div>
+</Section>

@@ -1,0 +1,54 @@
+---
+import Section from './Section.astro';
+import { pricing, site } from '../config/site';
+
+const included = [
+  'Website assistant, answering 24/7 from your Brain',
+  'Instant lead alerts with a brief: who, what, and when',
+  'Estimate and follow-up emails, stopping the moment they reply',
+  'Website care: updates, backups, uptime, security',
+  'Brain maintenance as your prices and services change',
+  'A one-page monthly report against your starting numbers',
+];
+---
+
+<Section id="program">
+  <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+    <div>
+      <h2 class="font-serif text-4xl leading-tight tracking-tight sm:text-5xl">The Program.</h2>
+      <p class="mt-4 text-lg text-muted">
+        One plan. Everything runs, stays current, and reports back.
+      </p>
+    </div>
+    <div class="rounded-3xl border border-rule bg-paper p-8 shadow-xl shadow-pine/5">
+      <span class="mb-4 inline-block rounded-full bg-amber px-2.5 py-1 text-xs font-bold tracking-wider text-pine uppercase">
+        Founding rate
+      </span>
+      <p class="text-6xl font-bold tracking-tight">
+        ${pricing.foundingMonthly}
+        <span class="text-lg font-medium text-muted">/ month</span>
+      </p>
+      <p class="mt-2 text-sm text-muted">
+        For the first {pricing.foundingSlots} clients, locked for {pricing.foundingLockMonths}{' '}
+        months. Standard rate ${pricing.standardMonthly} once phone answering and text follow-up are
+        added.
+      </p>
+      <ul class="my-6 list-none p-0">
+        {included.map((item) => (
+          <li class="relative border-t border-rule py-2.5 pl-7 before:absolute before:top-4 before:left-1 before:h-1.5 before:w-2.5 before:-rotate-45 before:border-b-2 before:border-l-2 before:border-pine">
+            {item}
+          </li>
+        ))}
+      </ul>
+      <p class="text-sm font-semibold">
+        The system answers 24/7. Humans respond the next business day.
+      </p>
+      <p class="mt-2 text-sm text-muted">Coming next: phone answering and text follow-up.</p>
+      <p class="mt-6">
+        <a class="btn btn-pine" href={`mailto:${site.contactEmail}?subject=Program%20enquiry`}>
+          Ask about the Program
+        </a>
+      </p>
+    </div>
+  </div>
+</Section>

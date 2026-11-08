@@ -1,0 +1,50 @@
+---
+interface Step {
+  title: string;
+  body: string;
+}
+interface Props {
+  steps: Step[];
+}
+const { steps } = Astro.props;
+---
+
+<ol class="steps mt-8 max-w-2xl">
+  {steps.map((s) => (
+    <li>
+      <strong>{s.title}</strong> {s.body}
+    </li>
+  ))}
+</ol>
+
+<style>
+  .steps {
+    list-style: none;
+    padding: 0;
+    counter-reset: step;
+  }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 1rem 0 1rem 3.25rem;
+    border-top: 1px solid var(--rule);
+  }
+  .steps li:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    background: var(--pine);
+    color: var(--cream);
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+</style>

@@ -1,0 +1,15 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+  tone?: 'default' | 'dark';
+}
+const { id, class: extra = '', tone = 'default' } = Astro.props;
+const toneClass = tone === 'dark' ? 'bg-pine text-cream' : 'border-t border-rule';
+---
+
+<section id={id} class:list={['py-20 sm:py-24', toneClass, extra]}>
+  <div class="mx-auto max-w-6xl px-5">
+    <slot />
+  </div>
+</section>

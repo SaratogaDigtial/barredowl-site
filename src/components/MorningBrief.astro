@@ -1,0 +1,26 @@
+---
+// Sample only. Replace with real overnight data once the assistant is live.
+const items = [
+  {
+    title: '3 new leads overnight',
+    meta: 'Quoted a gutter cleaning, asked about Saturday availability',
+  },
+  { title: 'Plumbing, 9:40 PM', meta: 'Needs a same-day callback. Brief attached.' },
+  { title: '1 quote awaiting reply', meta: 'Follow-up scheduled for day 3' },
+];
+---
+
+<figure class="rounded-2xl border border-cream/15 bg-cream/5 p-5 text-[15px] text-cream">
+  <figcaption class="mb-3 flex justify-between text-xs tracking-widest text-amber uppercase">
+    <span>Sample morning brief</span>
+    <span>7:00 AM</span>
+  </figcaption>
+  <ul class="divide-y divide-cream/10">
+    {items.map((i) => (
+      <li class="py-2.5 first:pt-0">
+        <p class="font-semibold">{i.title}</p>
+        <p class="text-sm opacity-70">{i.meta}</p>
+      </li>
+    ))}
+  </ul>
+</figure>

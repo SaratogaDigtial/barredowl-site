@@ -1,0 +1,59 @@
+---
+const chips = [
+  { label: 'Get a price', q: "I'd like a price." },
+  { label: 'Do you do ___?', q: 'Do you do websites for my kind of business?' },
+  { label: 'What does it cost?', q: 'What does the Program cost?' },
+  { label: 'Hours & location', q: 'Where are you located and when are you open?' },
+];
+---
+
+<!-- Replace the form with the assistant widget once the Brain is loaded and stump-tested. -->
+<div class="rounded-2xl bg-paper p-5 text-pine shadow-2xl shadow-black/35 sm:p-6">
+  <div class="mb-3 flex items-center gap-2 text-sm text-muted">
+    <span class="size-2 rounded-full bg-emerald-600" aria-hidden="true"></span>
+    Ask the assistant
+  </div>
+  <p class="mb-3 text-xl font-semibold tracking-tight text-pine">What do you need?</p>
+
+  <div class="mb-4 flex flex-wrap gap-2" role="group" aria-label="Quick questions" data-chips>
+    {chips.map((c) => (
+      <button
+        type="button"
+        data-q={c.q}
+        class="cursor-pointer rounded-full border border-pine/20 bg-white px-3.5 py-2 text-sm text-pine hover:border-pine"
+      >
+        {c.label}
+      </button>
+    ))}
+  </div>
+
+  <form action="#" method="post" onsubmit="return false;" data-chat-form>
+    <label for="q" class="mb-1.5 block text-sm text-muted">
+      Ask anything about your business
+    </label>
+    <input
+      id="q"
+      name="q"
+      type="text"
+      autocomplete="off"
+      placeholder="e.g. How much to rebuild my site?"
+      class="w-full rounded-lg border border-pine/20 bg-white px-4 py-3.5 text-base text-pine focus:outline-2 focus:outline-amber"
+    />
+  </form>
+  <p class="mt-3 text-sm text-muted">
+    Questions the assistant can't answer go to Tom in the morning. Nothing is sent without your
+    details.
+  </p>
+</div>
+
+<script>
+  const input = document.getElementById('q') as HTMLInputElement | null;
+  document.querySelectorAll<HTMLButtonElement>('[data-chips] button').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (input) {
+        input.value = btn.dataset.q ?? '';
+        input.focus();
+      }
+    });
+  });
+</script>
