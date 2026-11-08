@@ -4,10 +4,13 @@ import { site, navItems } from '../config/site';
 
 <header class="sticky top-0 z-10 bg-pine/90 text-cream backdrop-blur">
   <div class="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 px-5">
-    <a href="/" class="font-bold tracking-[0.14em]">
-      {site.name.toUpperCase()}
-      <span class="block text-xs font-normal tracking-normal opacity-70 max-sm:hidden">
-        {site.descriptor}
+    <a href="/" class="flex items-center gap-3">
+      <img src="/owl.svg" alt="" width="36" height="36" class="size-9 shrink-0" />
+      <span class="font-bold tracking-[0.14em]">
+        {site.name.toUpperCase()}
+        <span class="block text-xs font-normal tracking-normal opacity-70 max-sm:hidden">
+          {site.descriptor}
+        </span>
       </span>
     </a>
     <nav class="flex gap-5 text-sm max-md:hidden" aria-label="Main">
